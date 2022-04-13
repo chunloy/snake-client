@@ -12,7 +12,7 @@ const connect = function() {
 
   //read data from server
   conn.on('data', (messageFromServer) => {
-    console.log('Server says:', messageFromServer)
+    console.log('Server says:', messageFromServer);
 
   });
 
