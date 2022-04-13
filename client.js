@@ -17,6 +17,16 @@ const connect = function() {
 
   });
 
+  //write print to terminal when connection event occurs
+  //handler means callback!
+  conn.on('connect', () => {
+    //write print to terminal when connection event occurs
+    console.log('Successfully connected to game server.');
+
+    //write name to server when connection established
+    conn.write("Name: ARN");
+  })
+
   return conn;
 };
 
