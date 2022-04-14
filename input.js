@@ -6,10 +6,16 @@ const handleUserInput = function(key) {
   //'\u0003 maps to crtl+c to input. This kills the program
   if (key === '\u0003') process.exit();
 
-  if (key === 'w') connection.write('Move: up');   //move up with 'w'
-  if (key === 'a') connection.write('Move: left'); //move left with 'a'
-  if (key === 's') connection.write('Move: down'); //move down with 's'
-  if (key === 'd') connection.write('Move: right');//move right with 'd'
+  //movement commands
+  if (key === 'w') connection.write('Move: up');
+  if (key === 'a') connection.write('Move: left');
+  if (key === 's') connection.write('Move: down');
+  if (key === 'd') connection.write('Move: right');
+
+  //message commands
+  if (key === 'z') connection.write('Say: !@#$');  //angry message
+  if (key === 'x') connection.write('Say: GG');    //nice message
+  if (key === 'c') connection.write('Say: QQ');    //sad message
 };
 
 //function to listen for keybod input
