@@ -1,21 +1,27 @@
+//import module
+const { EXIT } = require('./constants');
+
+//mapping commands
+const commands = {
+  w: "Move: up",
+  a: "Move: left",
+  s: "Move: down",
+  d: "Move: right",
+  z: "Say: !@#$",
+  x: "Say: GG",
+  c: "Say: QQ"
+};
+
 //stores the active TCP connection object
 let connection;
 
 //handleUserInput function. this is the callback for stdin.on() on line 20
 const handleUserInput = function(key) {
   //'\u0003 maps to crtl+c to input. This kills the program
-  if (key === '\u0003') process.exit();
+  if (key === EXIT) process.exit();
 
-  //movement commands
-  if (key === 'w') connection.write('Move: up');
-  if (key === 'a') connection.write('Move: left');
-  if (key === 's') connection.write('Move: down');
-  if (key === 'd') connection.write('Move: right');
-
-  //message commands
-  if (key === 'z') connection.write('Say: !@#$');  //angry message
-  if (key === 'x') connection.write('Say: GG');    //nice message
-  if (key === 'c') connection.write('Say: QQ');    //sad message
+  //write to server
+  connection.write(commands[key]);
 };
 
 //function to listen for keybod input
