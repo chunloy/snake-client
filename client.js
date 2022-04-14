@@ -27,22 +27,6 @@ const connect = function() {
     conn.write("Name: ARN");
   });
 
-  //move commands
-  // conn.on('connect', () => {
-  //   const commands = ["Move: left", "Move: left", "Move: left", "Move: left", "Move: left", "Move: left", "Move: left", "Move: left",
-  //     "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up", "Move: up",
-  //     "Move: right", "Move: right", "Move: right", "Move: right", "Move: right", "Move: right", "Move: up", "Move: up",
-  //     "Move: left", "Move: left", "Move: left", "Move: left", "Move: down", "Move: down", "Move: down", "Move: down", "Move: down", "Move: down"];
-  //   let delay = 0;
-
-  //   //delay each command by an additional 125ms
-  //   for (const command of commands) {
-  //     setTimeout(() => {
-  //       conn.write(command);
-  //     }, delay += 125);
-  //   }
-  // });
-
   return conn;
 };
 
